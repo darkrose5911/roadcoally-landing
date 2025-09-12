@@ -1,0 +1,137 @@
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.9) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: -200% 0;
+  animation: shiny-shimmer 3s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Base text color for visibility */
+.shiny-text {
+  color: inherit;
+}
+
+/* White button variant - text visible by default with shimmer effect */
+.shiny-text.on-white {
+  color: #00A651;
+  background: linear-gradient(
+    110deg,
+    #00A651 20%,
+    #00A651 40%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 55%,
+    #00A651 70%,
+    #00A651 100%
+  );
+  background-size: 200% 100%;
+  background-position: -200% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark background variant */
+.shiny-text.on-dark {
+  color: white;
+  background: linear-gradient(
+    110deg,
+    white 20%,
+    white 40%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.8) 55%,
+    white 70%,
+    white 100%
+  );
+  background-size: 200% 100%;
+  background-position: -200% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shiny-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  20% {
+    background-position: -200% 0;
+  }
+  80% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-text.disabled {
+  animation-play-state: paused;
+  opacity: 0.6;
+}
+
+/* Alternative shimmer effect for darker backgrounds */
+.shiny-text.dark-variant {
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    transparent 40%,
+    rgba(207, 231, 215, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+}
+
+/* Enhanced shimmer for headings */
+.shiny-text.enhanced {
+  background: linear-gradient(
+    110deg,
+    transparent 15%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.7) 45%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.95) 55%,
+    rgba(255, 255, 255, 0.7) 60%,
+    transparent 75%,
+    transparent 100%
+  );
+  animation-duration: 2.5s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slower, subtle shimmer */
+.shiny-text.subtle {
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    transparent 45%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 55%,
+    transparent 70%
+  );
+}
+
+/* Fast, energetic shimmer */
+.shiny-text.energetic {
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: linear-gradient(
+    110deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 90%
+  );
+}

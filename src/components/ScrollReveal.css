@@ -1,0 +1,74 @@
+/* ScrollReveal Component Styles */
+
+.scroll-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-reveal-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-reveal-text .word {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 0.2em;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.scroll-reveal-text .word:last-child {
+  margin-right: 0;
+}
+
+/* Ensure proper rendering for animations */
+.scroll-reveal-text .word span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur(10px);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Support for different text sizes */
+.scroll-reveal-text.text-4xl .word,
+.scroll-reveal-text.text-5xl .word,
+.scroll-reveal-text.text-6xl .word,
+.scroll-reveal-text.text-7xl .word {
+  line-height: inherit;
+}
+
+/* Ensure smooth animations on all devices */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal-text .word {
+    transition: none;
+  }
+}
+
+/* Fallback for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-text .word span {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Hardware acceleration for better performance */
+.scroll-reveal,
+.scroll-reveal-text,
+.scroll-reveal-text .word,
+.scroll-reveal-text .word span {
+  transform: translate3d(0, 0, 0);
+}
